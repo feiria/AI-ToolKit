@@ -94,32 +94,78 @@ TODO
     <tbody>
         <tr align="center" valign="bottom">
             <th>
-                <b>方法</b>
+                <b>数据处理</b>
             </th>
             <th>
-                <b>测试模型</b>
+                <b>模块</b>
             </th>
             <th>
-                <b>测试数据集</b>
+                <b>训练</b>
             </th>
             <th>
-                <b>测试结果</b>
+                <b>loss</b>
+            </th>
+            <th>
+                <b>后处理</b>
             </th>
         </tr>
-        <tr>
-            <td>
+        <tr valign="top">
+        <td>
+            <ul>
+                <li><a href="projects/method/特征处理/demo.ipynb">特征平滑</a></li>
+            </ul>
+            <ul>
+                <li><a href="projects/method/特征处理/demo.ipynb">log变换</a></li>
+            </ul>
+            <ul>
+                <li><a href="projects/method/特征筛选/demo.ipynb">对抗验证</a></li>
+            </ul>
+            <ul>
+                <li><a href="projects/method/特征筛选/demo.ipynb">Null Importance</a></li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li><a href="core/models/attentions/dropkey.py">DropKey</a></li>
+            </ul>
+            <ul>
+                <li><a href="core/models/attentions/simam.py">SimAM</a></li>
+            </ul>
+            <ul>
+                <li><a href="core/models/attentions/triplet.py">Triplet Attention</a></li>
+            </ul>
+        </td>
+        <td>
+            <ul>
                 <li><a href="projects/method/LGB直接优化QWK">LGB直接优化QWK</a></li>
-            </td>
-            <td>
-                <p>LightGBM</p>
-            </td>
-            <td>
-                <p>待定</p>
-            </td>
-            <td>
-                <p>待定</p>
-            </td>
-        </tr>
+            </ul>
+            <ul>
+                <li><a href="core/engine/hooks/adv">对抗训练</a></li>
+            </ul>
+            <ul>
+                <li><a href="core/engine/optimizers/lion.py">Lion</a></li>
+            </ul>
+            <ul>
+                <li><a href="core/engine/optimizers/gc_adamw.py">梯度中心化</a></li>
+            </ul>
+            <ul>
+                <li>R-Drop</li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li><a href="core/evalution/functional/mask_loss.py">Mask Loss</a></li>
+            </ul>
+            <ul>
+                <li>ArcFace Loss</li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li><a href="core/evalution/functional/">投票法</a></li>
+            </ul>
+        </td>
+    </tr>
     </tbody>
 </table>
 
