@@ -134,6 +134,15 @@ TODO
             <ul>
                 <li><a href="core/models/attentions/triplet.py">Triplet Attention</a></li>
             </ul>
+            <ul>
+                <li><a href="core/models/attentions/boundary_activation.py">Boundary Activation</a></li>
+            </ul>
+            <ul>
+                <li><a href="core/models/modules/base/norms.py">IBN</a></li>
+            </ul>
+            <ul>
+                <li><a href="core/models/modules/convs/coord_conv.py">CoordConv</a></li>
+            </ul>
         </td>
         <td>
             <ul>
