@@ -1,8 +1,26 @@
 import inspect
 from typing import Dict, Tuple, Union
+
+import torch
 from torch import nn
 from torch.nn.modules.batchnorm import _BatchNorm
 from torch.nn.modules.instancenorm import _InstanceNorm
+
+
+class IBN(nn.Module):
+    def __init__(self, in_channels, ratio=0.5):
+        super(IBN, self).__init__()
+
+        self.half_channels = int(in_channels * ratio)
+        self.IN = nn.InstanceNorm2d(self.half_channels, affine=True)
+        self.BN = nn.BatchNorm2d(in_channels - self.half_channels)
+
+    def forward(self, x):
+        splits = torch.split(x, self.half_channels, 1)
+        in_outs = self.IN(splits[0].contiguous())
+        bn_outs = self.BN(splits[1].contiguous())
+        outs = torch.cat((in_outs, bn_outs), 1)
+        return outs
 
 
 NORM_LAYERS = {
@@ -17,6 +35,7 @@ NORM_LAYERS = {
     "IN1d": nn.InstanceNorm1d,
     "IN2d": nn.InstanceNorm2d,
     "IN3d": nn.InstanceNorm3d,
+    "IBN": IBN,
 }
 
 
